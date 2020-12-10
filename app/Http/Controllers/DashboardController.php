@@ -19,7 +19,8 @@ class DashboardController extends Controller
     public function load_dashboard()
     {
     	$truyen=truyen::all();
+      $top_truyen=truyen::orderBy('luotxem', 'desc')->take(2)->get();
     	$count_story=$truyen->count();
-    	return view('admin.Dashboard.trangchu',['count_story'=>$count_story]);
+    	return view('admin.Dashboard.trangchu',['count_story'=>$count_story,'top_truyen'=>$top_truyen]);
     }
 }

@@ -59,10 +59,9 @@
                 </div>
                 <div class="card">
                   <ul class="">
-                    <li><a href="">Chí phèo</a></li>
-                    <li><a href="">Chí phèo</a></li>
-                    <li><a href="">Chí phèo</a></li>
-                    <li><a href="">Chí phèo</a></li>
+                    @foreach($top_truyen as $tt)
+                    <li><a href="admin/truyen/sua/{{$tt->id}}">{{$tt->tentruyen}}({{$tt->luotxem}} lượt xem)</a></li>
+                    @endforeach
                   </ul>
                 </div>
 

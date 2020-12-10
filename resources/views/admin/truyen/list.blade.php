@@ -63,7 +63,7 @@
        <td align="center">
           <a class="btn btn-primary" href="admin/truyen/sua/{{$tr->id}}"><em class="fas fa-pencil-alt"></em></a>
           <a class="btn btn-danger" onclick="return confirm('Có thể bạn sẽ xóa toàn bộ chương thuộc truyện này!')" href="admin/truyen/xoa/{{$tr->id}}"><em class="fa fa-trash"></em></a>
-          <a class="btn btn-success" href="admin/danhsachchuong/{{$tr->id}}"><em class="fa fa-book"></em></a>
+          <a class="btn btn-success" href="admin/chuong/danhsach/{{$tr->id}}/{{$tr->tenkhongdau}}.html"><em class="fa fa-book"></em></a>
        </td> 
        <td class="hidden-xs"><b><i>{{$tr->tentruyen}}</i></b>
         @if($tr->trangthai==1)

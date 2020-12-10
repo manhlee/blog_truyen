@@ -9,6 +9,7 @@ use App\Http\Controllers\TacGiaController;
 use App\Http\Controllers\TruyenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\chuongController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::post('admin/login',[LoginController::class,'post_login'])->name('post_log
 Route::get('admin/login',[LoginController::class,'load_login'])->name('login_admin');
 Route::group(['prefix'=>'admin','middleware' =>'AdminRole'],function(){
 	Route::get('phantrang/{page_name}/{amount}',[PhanTrangController::class,'changePagi']);
+	Route::get('phantrangchuong/{amount}',[PhanTrangController::class,'change_pagi']);
 	Route::group(['prefix'=>'theloai'],function(){
 		Route::get('danhsach',[TheloaiController::class,'list_category'])->name('list_cate');
 		Route::get('themmoi',[TheloaiController::class,'load_add']);
@@ -66,5 +68,17 @@ Route::group(['prefix'=>'admin','middleware' =>'AdminRole'],function(){
 		Route::post('thaydoithongtin',[AccountController::class,'post_change_infor'])->name('change_infor_admin');
 		Route::get('taotaikhoan',[AccountController::class,'load_create_accout']);
 		Route::post('taotaikhoan',[AccountController::class,'post_create_accout'])->name('create_account_admin');
+		Route::get('danhsach',[AccountController::class,'load_list_user']);
+		Route::get('search',[AccountController::class,'search_live'])->name('search_user');
+		Route::get('xoa/{id}',[AccountController::class,'delete_user']);
+	});
+	Route::group(['prefix'=>'chuong'],function(){
+		Route::get('danhsach/{id}/{tenkhongdau}.html',[chuongController::class,'load_chapter']);
+		Route::get('themmoi/{id}',[chuongController::class,'load_add_chapter']);
+		Route::post('themmoi',[chuongController::class,'post_add_chapter'])->name('add_chapter');
+		Route::get('sua/{id}',[chuongController::class,'load_edit_chapter']);
+		Route::post('sua/{id}',[chuongController::class,'post_edit_chapter']);
+		Route::get('xoa/{id}',[chuongController::class,'delete_chapter']);
+		Route::get('search',[chuongController::class,'search_live'])->name('search_chapter');
 	});
 });

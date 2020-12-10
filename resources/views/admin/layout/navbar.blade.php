@@ -6,7 +6,7 @@
                   <li><a href="admin/dashboard" class="btn btn-default"><i class="fas fa-home"></i>
                   Bảng điều khiển</a></li>
 
-                  <li class="item-chuyenmuc"><a href="" class="btn btn-default"><i class="far fa-folder-open"></i>
+                  <li class="item-chuyenmuc"><a href="admin/theloai/danhsach" class="btn btn-default"><i class="far fa-folder-open"></i>
                   Chuyên mục</a>
                     <div class="danhsach2">
                    <ul>
@@ -24,18 +24,17 @@
                   <div class="danhsach">
                    <ul>
                      <li style="border: 0"><a href="admin/truyen/danhsach">Danh sách truyện</a></li>
-                     <li style="border: 0"><a href="">Danh sách chương</a></li>
                      <li style="border: 0"><a href="admin/truyen/themmoi">Thêm mới truyện</a></li>
                    </ul>
                   </div>
                 </li>
-                  <li><a href="" class="btn btn-default"><i class="fas fa-users"></i>
+                @if(session('admin')['level']==2)
+                  <li><a href="admin/taikhoan/danhsach" class="btn btn-default"><i class="fas fa-users"></i>
                   Thành Viên</a></li>
                   <li><a href="" class="btn btn-default"><i class="fas fa-cog"></i>
-                  Cài đặt hệt thống</a></li>
-                  <li><a href="" class="btn btn-default"><i class="fas fa-pen"></i>
-                  Chỉnh sửa điều khoản</a></li>
+                  Cài đặt hệt thống</a></li> 
                   </ul>
+                  @endif
                 </div>
             </div>
       

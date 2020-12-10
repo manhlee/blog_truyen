@@ -79,4 +79,67 @@ class AccountController extends Controller
     	return redirect('admin/taikhoan/taotaikhoan')->with('thanhcong',"Tạo tài khoản thành công!");
 
     }
+    public function load_list_user()
+    {
+        $user=User::paginate(session('paginate'));
+        return view('admin.account.list_users',['users'=>$user]);
+    }
+    public function search_live(Request $req)
+    {
+            $data='';
+            $links='';
+            $cout_page='';
+            
+            $query=$req->get('query');
+            if($query!='')
+            {
+                
+                $users= User::where('name','like','%'.$query.'%')->orWhere('email','like','%'.$query.'%')->orderBy('id', 'desc')->get();
+                $level='';
+                if($users->count()>0)
+                {
+                    foreach ($users as $user) {
+                        if($user->level==1){
+                            $level="Người dùng";
+                        }elseif($user->level==2)
+                        {
+                            $level="Supper user";
+                        }else{
+                            $level="Quản trị viên";
+                        }
+                        $data.='<tr> 
+                                   <td align="center"><a class="btn btn-danger"><em class="fa fa-trash" href="admin/taikhoan/xoa/'.$user->id.'" onclick="return confirm(\'Bạn có thực sự muốn xóa người dùng này!\')"></em></a>
+                                   </td> 
+                                   <td class="hidden-xs">'.$user->id.'</td> 
+                                   <td>'.$user->name.'</td>
+                                   <td>'.$user->email.'</td>
+                                   <td>'.$level.'</td>
+                          </tr> ' ;
+                                
+                    }
+                $cout_page='Tìm thấy '.$users->count().' kết quả';
+            }else{
+                $data="<tr>
+                    <td align='center' colspan='3'>Không tìm thấy!</td>
+                </tr>";
+            }
+                $data_output=array(
+                'data_table'=>$data,
+                'links'=>$links,
+                'count_page'=>$cout_page
+            );
+            echo json_encode($data_output);
+            }
+            /*chú ý 
+                phần này lấy text từ thẻ input sau đó gửi về đây truy vấn rồi trả dữ liệu về
+                vấn đề khi trong thẻ input trắng thì phải  load  lại trang cũ
+                cách đơn giản là sử lý bên người dùng, kiểm tra hộp input nếu nó có dữ liệu
+                thì mới sử dụng ajax gửi đi ngượi lại không có thì mình sẽ reload
+            */
+    }
+    public function delete_user($id)
+    {
+        User::destroy($id);
+        return redirect('admin/taikhoan/danhsach')->with('thongbao',"Xóa thành công!");
+    }
 }
