@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <link rel="stylesheet" type="text/css" href="{{asset('public_admin/css/css_login.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/public_admin/css/css_login.css')}}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

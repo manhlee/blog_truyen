@@ -25,7 +25,7 @@ class chuongController extends Controller
     {
     	$this->validate($req,
     		[
-    			'tenchuong'=>'min:10|max:100|required',
+    			'tenchuong'=>'min:5|max:100|required',
     			'noidung'=>'min:100|required'
     		],
     		[
@@ -35,6 +35,9 @@ class chuongController extends Controller
     			'noidung.min'=>"Nội dung quá ngắn !",
     			'noidung.required'=>"Nội dung không được bỏ trống !"
     		]);
+        $truyen=truyen::find($req->id_truyen);
+        $truyen->trangthai=$req->trangthai;
+        $truyen->save();
     	$chuong= new chuong();
     	$chuong->ten=$req->tenchuong;
     	$chuong->tenkhongdau=convert_vi_to_en($req->tenchuong);
@@ -52,7 +55,7 @@ class chuongController extends Controller
     {
     	$this->validate($req,
     		[
-    			'tenchuong'=>'min:10|max:100|required',
+    			'tenchuong'=>'min:5|max:100|required',
     			'noidung'=>'min:100|required'
     		],
     		[
@@ -63,6 +66,9 @@ class chuongController extends Controller
     			'noidung.required'=>"Nội dung không được bỏ trống !"
     		]);
     	$chuong=chuong::find($id);
+        $truyen=truyen::find($chuong->id_truyen);
+        $truyen->trangthai=$req->trangthai;
+        $truyen->save();
     	$chuong->ten=$req->tenchuong;
     	$chuong->tenkhongdau=convert_vi_to_en($req->tenchuong);
     	$chuong->noidung=$req->noidung;

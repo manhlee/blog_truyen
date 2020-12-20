@@ -1,0 +1,385 @@
+body,html{
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+   background-color: #ecebe8;
+}
+
+/*xử lý phần menu*/
+.menu-1{    
+        background: linear-gradient(45deg, #a7482a, #5f3c09);
+}
+.menu-1 img{
+    width: 30%;
+}
+.menu-2 {
+    background: linear-gradient(white,#efefef);
+    box-shadow: 7px 4px 11px #776e6e;
+    border: 1px solid #b9b9af;
+}
+input.form-control {
+    width: 500px !important;
+    font-weight: 500;
+    border-radius: 0;
+}
+input.form-control:focus{
+     outline: 0;
+    box-shadow: none;
+}
+.menu-1 button {
+    border: 1px solid white;
+    border-radius: 0px;
+    background-color: transparent;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+.menu-1 button:focus {
+    outline: 0;
+    box-shadow: none;
+    /* box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5); */
+}
+.menu-1 button:hover{
+    background-color: #a09705;
+    transition: all 0.4s ease-in-out;
+}
+.menu-2 a {
+    color: #615c5c;
+    text-transform: uppercase;  
+    transition: all 0.3s ease-in-out;
+}
+.menu-2 a:hover{
+    box-shadow: 4px 1px 5px #776e6e, -4px 1px 5px #776e6e;
+    transition: all 0.3s ease-in-out;
+}
+
+/*end nav menu*/
+
+/*xử lý top 1*/
+.col-lg-3.sapxep-tab {
+    /*box-shadow: 2px 4px 10px #170e00;*/
+    padding: 1px;
+    /*height: 300px;*/
+    transition:0.4s;
+}
+.add-tab{
+   height: 54px !important;
+   transition:0.4s;
+}
+.col-lg-8.slide-truyen {
+    background-color: white;
+    padding: 20px;
+}
+.sapxep-tab p {
+    background-color: white;
+    padding: 12px;
+    margin: 0;
+    border-top: 1px dotted black;
+}
+.sapxep-tab h3 {
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0;
+}
+.sapxep-tab h3:hover{
+    background: no-repeat url("./img/arrow_up.png");
+    background-color: white;
+    background-position: 90% 50%;
+    transition: all 0.4s ease-in-out;
+}
+.add{
+    background: no-repeat url("./img/arrow_down.png") !important;
+    background-color: white !important;
+    transition: all 0.4s ease-in-out;
+    background-position: 90% 50% !important;
+}
+.sapxep-tab a{
+    color: black;
+}
+
+.theloai_thongbao {
+    position: absolute;
+    background-color: white;
+    min-width: 380px;
+    height: 200px;
+    top:57px;
+    display: none;
+    opacity: 0;
+
+    transition: 0.5s;
+    z-index: 900;
+}
+.theloai_thongbao::before{
+    content: "";
+    display: block;
+    width: 21%;
+    height: 26px;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+    top: -27px;
+}
+.theloai_thongbao ul
+{
+    position: absolute;
+    list-style: none;
+    left: -22px;
+    top: 15px;
+    z-index: 1000;
+
+}
+hr.cach-theloai {
+    position: relative;
+    bottom: -5px;
+}
+.theloai
+{
+    position: relative;
+}
+.theloai_thongbao_item:hover{
+    box-shadow: none !important;
+}
+.theloai_thongbao_item{
+    text-transform: none !important;
+
+}
+.theloai_thongbao li {
+    padding: 6px;
+}
+.theloai:hover .theloai_thongbao
+{
+    display: block;
+    opacity: 1;
+}
+/*top2*/
+
+h3.text-center.text-uppercase {
+    box-shadow: 2px 4px 9px #170e00, 2px 4px 20px #cccbc9;
+    padding: 10px;
+    background: white;
+}
+.item-truyen {
+    width: 214px;
+    height: 275px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.anh{
+     overflow: hidden;
+     position: absolute;
+     transform: scale(1);
+     transition: 0.3s;
+     
+     }
+.nenxam {
+    width: 214px;
+    height: 275px;
+    position: absolute;
+    background: rgb(76 72 72 / 40%);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.tieude {
+    position: absolute;
+    top: 61%;
+    left: 12%;
+    color:white;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.2s;
+    transform: translateY(0px);
+}
+.tacgia {
+    position: absolute;
+    left: 13%;
+    top: 72%;
+    color: white;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+    transform: translateY(0px);
+}
+.item-truyen:hover .nenxam{
+    opacity: 1;
+}
+.item-truyen:hover .tieude{
+    opacity: 1;
+    transform: translateY(-30px);
+}
+.item-truyen:hover .tacgia{
+    opacity: 1;
+    transform: translateY(30px);
+}
+.item-truyen:hover .anh{
+    transform: scale(1.2);
+}
+.item-truyen:hover .thanh1{
+    transform: rotate(0deg);
+    height: 1px;
+    opacity: 1;
+}
+.item-truyen:hover .thanh2{
+    transform: rotate(0deg);
+    height: 1px;
+    opacity: 1;
+}
+hr.cach-item-truyen {
+    width: 88%;
+    /* text-align: center; */
+    transform: translateX(-20px);
+} 
+.thanh1 {
+    position: absolute;
+    background: #fbfbfb;
+    width: 156px;
+    top: 71%;
+    left: 13%;
+    height: 3px;
+    opacity: 0;
+    transition: 0.3s;
+    transform: rotate(50deg);
+} 
+.thanh2 {
+    position: absolute;
+    background: #fbfbfb;
+    width: 156px;
+    top: 71%;
+    left: 13%;
+    height: 3px;
+    opacity: 0;
+    transition: 0.3s;
+    transform: rotate(-50deg);
+}
+/*top truyện hay*/
+.stt-item {
+    margin: 6px 0px;
+    position: absolute;
+    left: 15px;
+    font-size: 23px;
+}
+a.toptruyenhay-tieude {
+    position: absolute;
+    top: 0;
+    left: 52px;
+}
+.toptruyenhay-luotxem {
+    position: absolute;
+    bottom: 2px;
+    left: 53px;
+    font-size: 12px;
+}
+.toptruyenhay-item {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    position: relative;
+    width: 284px;
+    height: 48px;
+    border-top: 1px dotted #807e7e;
+}
+.tieude-toptruyenhay
+{
+    background-image: none !important;
+}
+/*top3*/
+.tieude-theloai
+{
+     background-image: none !important;
+}
+.top3{
+    padding-bottom: 30px;
+}
+
+footer.footer {
+    background-color: #212529;
+    color: white;
+    padding: 30px;
+    
+}
+i.fab.fa-facebook-f {
+    color: white;
+    text-decoration: none;
+}
+a.icon-gmail {
+    color: white;
+    text-decoration: none;
+}
+.footer-add{
+    display: block !important;
+    opacity: 1 !important;
+    transition: 0.4s;
+}
+
+
+/*cột trái*/
+.truyen {
+    padding: 20px;
+    background-color: white;
+}
+.binhluan-form textarea {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    background: #f2f2f2;
+    font-family: initial;
+}
+.repcm{
+      width: 100%;
+    height: 70px;
+    padding: 10px;
+    background: #f2f2f2;
+    font-family: initial;
+}
+.binhluan-list{
+    padding: 0;
+}
+.binhluan-ten
+{
+    font-family: initial;
+}
+.binhluan-email
+{
+   font-family: initial;
+    margin: 20px 0px;
+}
+li.binhluan.clearfix {
+    list-style: none;
+    padding: 20px 0px;
+}
+.user-info{
+    display: flex;
+}
+.user-info_ten
+{
+    margin: 0px 20px;
+    color: #177ed0;
+}
+.user-info_ten:hover{
+    text-decoration: none;
+    color: #177ed0;
+}
+span.ngay {
+    font-family: auto;
+    font-size: 13px;
+}
+p.mess {
+    font-family: initial;
+    margin: 0px 20px;
+}
+.like{
+    color: #e63535;
+    margin-left: 5px;
+}
+.modal-dialog {
+    padding-top: 10%;
+}
+
+.modal-content {
+    padding: 23px;
+}

@@ -29,7 +29,14 @@
                           <label for="">Nội dung</label>
                           <textarea class="form-control ckeditor" id="ckeditor" placeholder="" name="noidung">
                           </textarea>
-                        </div>                                 
+                        </div>  
+                        <div class="form-group">
+                          <label for="">Trạng thái</label>
+                          <select name="trangthai" class="form-control">
+                            <option value="2" >Hoàn thành</option>
+                            <option value="1" selected>Chưa hoàn thành</option>
+                        </select>
+                        </div>                              
                         <button type="submit" class="btn btn-primary float-lg-right">Thêm</button>
                       </form>
                 </div>
