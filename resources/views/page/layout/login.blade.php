@@ -18,11 +18,6 @@
 		 @if(session('thanhcong'))
 		 	<small style="color: green;">{{session('thanhcong')}}</small>
 		 @endif
-		  <div class="form-group form-check">
-		    <label class="form-check-label">
-		      <input class="form-check-input" type="checkbox"> Ghi nhớ
-		    </label>
-		  </div>
 		  <button type="submit" class="btn btn-primary">Đăng nhập</button>
 		</form>
         

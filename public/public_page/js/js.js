@@ -16,22 +16,19 @@
 	      TweenMax.staggerFrom($('.theloai-item p'),1,{top:100,opacity:0},0.2);
 		});
 		/*rút gọn*/
-         $(document).ready(function() {
-         	$('.truyen-phai_info p').hide();
+              $(document).ready(function() {
          	$('.nut-rutgon_a').hide();
-         	$('.nut-rutgon_a').click(function() {
-         		$('.truyen-phai_info p').toggle(400);
+         	$('.nut-xemthem_a').click(function() {
+         		$('.truyen-phai_info').toggleClass('add-h');
          		$(this).hide();
-         		// $(this).css('display', 'none');
-         		$('.nut-xemthem_a').css('display', 'block');
+         		$('.nut-rutgon_a').show();
          		return false;
          	});
 
-         	$('.nut-xemthem_a').click(function() {
-         		$('.truyen-phai_info p').toggle(400);
+         	$('.nut-rutgon_a').click(function(){
+         		$('.truyen-phai_info').toggleClass('add-h');
          		$(this).hide();
-         		// $('.nut-rutgon_a').css('display', 'block');
-         		$('.nut-rutgon_a').show();
+         		$('.nut-xemthem_a').show();
          		return false;
          	});
          });

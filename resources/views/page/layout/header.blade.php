@@ -45,19 +45,15 @@
 		  <li class="nav-item theloai">
 		    <a class="nav-link" href="#">Thể loại</a>
 		    <div class="theloai_thongbao thu">
-		    	<div class="container ">
-		    		<div class="row">
-		    			<div class="col-lg-12">
-		    				<ul>
+		    	
+		    				<ul class="text-center">
 		    					 @foreach($data['theloai'] as $tl)
 					    		<li>
 					    			<a href="" class="theloai_thongbao_item">{{$tl->tentheloai}}</a>
 					    		</li>
 					    		@endforeach
 		    				</ul>
-		    			</div>
-		    		</div>
-		    	</div>
+		
 		    </div> <!-- end thể loại -->
 		  </li>
 		  @foreach($data['theloai'] as $tl)
@@ -66,10 +62,8 @@
 		    @if(count($tl->theloaitruyen)>0)
 		    @foreach($tl->theloaitruyen as $tlt)
 		    <div class="theloai_thongbao thu">
-		    	<div class="container ">
-		    		<div class="row">
-		    			<div class="col-lg-12">
-		    				<ul>
+		    	
+		    				<ul class="text-center">
 		    					 @foreach($tl->theloaitruyen as $tlt)
 					    		<li>
 					    			<a href="" class="theloai_thongbao_item">{{$tlt->tentheloai}}</a>
@@ -77,9 +71,7 @@
 					    		@endforeach
 		    				</ul>
 		    			</div>
-		    		</div>
-		    	</div>
-		    </div> 
+		    	 
 		    @endforeach
 		    @endif
 		  </li>
@@ -89,28 +81,22 @@
 		    <a class="nav-link" href="#"><i class="fas fa-user"></i>
 		    {{session('user')['name']}}</a>
 		    <div class="theloai_thongbao thu">
-		    	<div class="container ">
-		    		<div class="row">
-		    			<div class="col-lg-12">
-		    				<ul>
+		    	
+		    				<ul class="text-center">
 					    		<li>
 					    			<a href="dangxuat">Đăng xuất</a>
 					    		</li>
 		    				</ul>
 		    			</div>
-		    		</div>
-		    	</div>
-		    </div> 
+		    	
 		  </li>
 		  @else
 		   <li class="nav-item theloai">
 		    <a class="nav-link" href="#"><i class="fas fa-user"></i>
 		    Thành Viên</a>
 		    <div class="theloai_thongbao thu">
-		    	<div class="container ">
-		    		<div class="row">
-		    			<div class="col-lg-12">
-		    				<ul>
+		    
+		    				<ul class="text-center">
 					    		<li>
 					    			<a data-toggle="modal" id="link_modan1" data-target="#myModal">Đăng nhập</a>
 					    		</li>
@@ -118,9 +104,7 @@
 					    			<a data-toggle="modal" id="link_modan2" data-target="#myModal2">Đăng ký</a>
 					    		</li>
 		    				</ul>
-		    			</div>
-		    		</div>
-		    	</div>
+		    	
 		    </div> 
 		  </li>
 		 @endif

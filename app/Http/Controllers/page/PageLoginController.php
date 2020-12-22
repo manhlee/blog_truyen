@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-
 class PageLoginController extends Controller
 {
     //
@@ -26,6 +25,7 @@ class PageLoginController extends Controller
     }
    public function post_login(Request $req)
    {
+
    		$user=$this->get_data($req->username,$req->pass);
     	if(!$user){
     		return redirect()->back()->with('thatbai','Đăng nhập thất bại!');
@@ -36,6 +36,7 @@ class PageLoginController extends Controller
    }
    public function logout()
    {
+    
    		Session::forget('user');
    		return redirect()->back();
    }
