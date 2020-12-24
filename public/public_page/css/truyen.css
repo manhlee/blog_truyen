@@ -24,6 +24,9 @@ input.form-control {
     font-weight: 500;
     border-radius: 0;
 }
+.col-lg-3.sapxep-tab {
+    transform: translateX(20px);
+}
 input.form-control:focus{
      outline: 0;
     box-shadow: none;
@@ -210,7 +213,7 @@ h3.text-center.text-uppercase {
 .tacgia {
     position: absolute;
     left: 13%;
-    top: 72%;
+    top: 68%;
     color: white;
     opacity: 0;
     transition: 0.3s;
@@ -410,4 +413,172 @@ img.anh {
 }
 .add-h {
     height: 323px;
+}
+
+/*top truyện hay*/
+.stt-item {
+    margin: 6px 0px;
+    position: absolute;
+    left: 15px;
+    font-size: 23px;
+}
+a.toptruyenhay-tieude {
+    position: absolute;
+    top: 0;
+    left: 52px;
+}
+.toptruyenhay-luotxem {
+    position: absolute;
+    bottom: 2px;
+    left: 53px;
+    font-size: 12px;
+}
+.toptruyenhay-item {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    position: relative;
+    width: 284px;
+    height: 48px;
+    border-top: 1px dotted #807e7e;
+}
+.tieude-toptruyenhay
+{
+    background-image: none !important;
+}
+/*end top truyện hay*/
+
+
+
+footer.footer {
+    background-color: #212529;
+    color: white;
+    padding: 30px;
+   width: 100%;
+ 
+ 
+
+}
+i.fab.fa-facebook-f {
+    color: white;
+    text-decoration: none;
+}
+a.icon-gmail {
+    color: white;
+    text-decoration: none;
+}
+.footer-add{
+    display: block !important;
+    opacity: 1 !important;
+    transition: 0.4s;
+}
+select.danhsachchuong-truyen {
+    width: 150px;
+    height: 37px;
+    padding: 6px 10px;
+}
+.noidungtruyen {
+       padding: 50px 25px;
+    /* font-size: initial !important; */
+    font-family: initial;
+    font-size: 20px;
+}
+.wedtruyen{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 30px;
+}
+.wedtruyen::after {
+   content: "";
+    display: block;
+    margin: auto;
+    border-bottom: 1px solid gray;
+    flex: 1;
+   
+}
+.wedtruyen::before {
+   content: "";
+    display: block;
+    margin: auto;
+    border-bottom: 1px solid gray;
+    flex: 1;
+}
+.thaotac-truyen_duoi.text-center {
+    padding-bottom: 20px;
+}
+.tacgia.luotxem {
+    top: 76%;
+}
+/*truyen cua toi*/
+
+
+.quantity {
+    float: left;
+    margin-right: 15px;
+    background-color: #eee;
+    position: relative;
+    width: 80px;
+    overflow: hidden
+}
+
+.quantity input {
+    margin: 0;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    float: right;
+    color: #000;
+    font-size: 20px;
+    border: 0;
+    outline: 0;
+    background-color: #F6F6F6
+}
+
+.quantity input.qty {
+    position: relative;
+    border: 0;
+    width: 100%;
+    height: 40px;
+    padding: 10px 25px 10px 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 0;
+    background-clip: padding-box
+}
+
+.quantity .minus, .quantity .plus {
+    line-height: 0;
+    background-clip: padding-box;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-background-size: 6px 30px;
+    -moz-background-size: 6px 30px;
+    color: #bbb;
+    font-size: 20px;
+    position: absolute;
+    height: 50%;
+    border: 0;
+    right: 0;
+    padding: 0;
+    width: 25px;
+    z-index: 3
+}
+
+.quantity .minus:hover, .quantity .plus:hover {
+    background-color: #dad8da
+}
+
+.quantity .minus {
+    bottom: 0
+}
+.shopping-cart {
+    margin-top: 20px;
+}
+.modal-dialog.modal_story {
+    max-width: 800px !important;
 }

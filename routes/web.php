@@ -15,6 +15,8 @@ use App\Http\Controllers\page\Page_theloaiController;
 use App\Http\Controllers\page\timkiemController;
 use App\Http\Controllers\page\PageTruyenController;
 use App\Http\Controllers\page\PageLoginController;
+use App\Http\Controllers\page\DocTruyenController;
+use App\Http\Controllers\page\DangDocController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -99,3 +101,5 @@ Route::post('dangnhap',[PageLoginController::class,'post_login'])->name('dangnha
 Route::get('dangxuat',[PageLoginController::class,'logout']);
 Route::post('dangky',[PageLoginController::class,'sign'])->name('dangky');
 Route::post('binhluan',[PageTruyenController::class,'post_comment'])->name('comment');
+Route::get('doctruyen/{id}/{tentruyen}/{tenchuong}.html',[DocTruyenController::class,'load_read_chapter']);
+Route::get('dangdoc/{id}/{ten}',[DangDocController::class,'load_story']);

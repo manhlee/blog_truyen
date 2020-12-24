@@ -13,4 +13,8 @@ class theloai extends Model
     {
     	return $this->hasMany('App\Models\theloaitruyen','theloaicha','id');
     }
+    protected function truyen()
+    {
+    	return $this->hasManyThrough('App\Models\truyen','App\Models\theloaitruyen');
+    }
 }

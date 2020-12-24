@@ -7,16 +7,19 @@
 <div class="col-lg-9 list-truyen">
 			<h3 class="text-center text-uppercase"><i class="fab fa-hotjar"></i>Kết quả cho: {{$key}}</h3>
 			<div class="row">
-				@foreach($truyen as $t)
+				@foreach($truyen as $tr)
+				
 				<div class="col-lg-4">
 					<hr class="cach-item-truyen">
 					<div class="item-truyen" style="opacity: 1; top: 0px;">
-						<a href="#link"><img src="upload/{{$t->hinhanh}}" class="anh"></a>
-						<div class="nenxam"></div>
+						<a href="#link"><img src="upload/{{$tr->hinhanh}}" class="anh"></a>
+						<a href="truyen/{{$tr->id}}/{{$tr->tenkhongdau}}.html"><div class="nenxam"></div></a>
 						<div class="thanh1"></div>
 						<div class="thanh2"></div>
-						<div class="tieude">Tác phẩm: {{$t->tentruyen}}</div>
-						<div class="tacgia">Tác giả: {{$t->ten}}</div>
+
+						<div class="tieude">Tác phẩm: {{$tr->tentruyen}}</div>
+						<div class="tacgia">Tác giả: {{$tr->ten}}</div>
+						<div class="tacgia luotxem"><i class="fas fa-eye"></i> {{$tr->luotxem}} lượt xem</div>
 					</div>
 				</div>
 				@endforeach
@@ -31,4 +34,5 @@
 			
 		</div>
 		@endif
+		@include('page.layout.nav')
 @endsection

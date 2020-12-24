@@ -6,11 +6,11 @@
       	<input type="hidden" name="_token" value="{{csrf_token()}}">
 		  <div class="form-group">
 		    <label for="email">Tên đăng nhập</label>
-		    <input type="text" class="form-control" style="width: 420px !important;" placeholder="Nhập tên đăng nhập" name="username" id="email" required>
+		    <input type="text" class="form-control" style="width: 420px !important;" placeholder="Nhập tên đăng nhập" name="username" required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Mật khẩu</label>
-		    <input type="password" class="form-control" name="pass" style="width: 420px !important;" placeholder="Nhập mật khẩu" id="pwd" required>
+		    <input type="password" class="form-control" name="pass" style="width: 420px !important;" placeholder="Nhập mật khẩu" required>
 		  </div>
 		 @if(session('thatbai'))
 		 	<small style="color: red;">{{session('thatbai')}}</small>

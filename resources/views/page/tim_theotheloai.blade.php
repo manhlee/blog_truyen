@@ -12,11 +12,12 @@
 					<hr class="cach-item-truyen">
 					<div class="item-truyen" style="opacity: 1; top: 0px;">
 						<a href="#link"><img src="upload/{{$t->hinhanh}}" class="anh"></a>
-						<div class="nenxam"></div>
+						<a href="truyen/{{$t->id}}/{{$t->tenkhongdau}}.html"><div class="nenxam"></div></a>
 						<div class="thanh1"></div>
 						<div class="thanh2"></div>
 						<div class="tieude">Tác phẩm: {{$t->tentruyen}}</div>
 						<div class="tacgia">Tác giả: {{$t->tacgia->ten}}</div>
+						<div class="tacgia luotxem"><i class="fas fa-eye"></i> {{$t->luotxem}} lượt xem</div>
 					</div>
 				</div>
 				@endforeach
@@ -31,4 +32,5 @@
 			
 		</div>
 		@endif
+		@include('page.layout.nav')
 @endsection

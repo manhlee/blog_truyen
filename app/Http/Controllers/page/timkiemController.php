@@ -15,10 +15,13 @@ class timkiemController extends Controller
     	$truyen=DB::table('truyen')
     	->join('tacgia','truyen.id_tacgia','=','tacgia.id')
     	->join('theloaitruyen','truyen.id_theloaitruyen','=','theloaitruyen.id')
-    	->where('tentruyen','like',$key)
-    	->orWhere('ten','like',$key)
-    	->orWhere('tentheloai','like',$key)
-    	->get();
+        ->join('theloai','theloaitruyen.theloaicha','=','theloai.id')
+    	->where('truyen.tentruyen','like',$key)
+    	->orWhere('tacgia.ten','like',$key)
+    	->orWhere('theloaitruyen.tentheloai','like',$key)
+        ->orWhere('theloai.tentheloai','like',$key)
+    	->select('truyen.id','truyen.tentruyen','truyen.tenkhongdau','truyen.hinhanh','truyen.luotxem','tacgia.ten')
+        ->get();
     	return view('page.timkiem',['truyen'=>$truyen,'key'=>$req->key]);
     }
 }

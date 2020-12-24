@@ -18,7 +18,7 @@
 		    	@foreach($data2['tacgia'] as $tg)
 		    	<div class="toptruyenhay-item">
 		    	   <div class="stt-item">{{$i}}</div>
-		    	   <a href="" class="toptruyenhay-tieude pt-2">{{$tg->ten}}</a>
+		    	   <a href="timkiem?key={{convert_str_to_key($tg->ten)}}" class="toptruyenhay-tieude pt-2">{{$tg->ten}}</a>
 		    	</div>
 		    	<?php $i++; ?>
 		    	@endforeach

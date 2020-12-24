@@ -27,7 +27,7 @@ class truyen extends Model
     }
     protected function daxem()
     {
-    	return $this->belongsTo('App\Models\daxem','id_truyen','id');
+    	return $this->hasMany('App\Models\daxem','id_truyen','id');
     }
     protected function binhluan()
     {

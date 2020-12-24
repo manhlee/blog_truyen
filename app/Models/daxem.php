@@ -11,10 +11,10 @@ class daxem extends Model
     protected $table="daxem";
     protected function truyen()
     {
-    	return $this->hasMany('App\Models\truyen','id_truyen','id');
+    	return $this->belongsTo('App\Models\truyen','id_truyen','id');
     }
     protected function user()
     {
-    	return $this->hasMany('App\Models\truyen','id_user','id');
+    	return $this->belongsTo('App\Models\User','id_user','id');
     }
 }

@@ -13,15 +13,15 @@
       	<input type="hidden" name="_token" value="{{csrf_token()}}">
 		  <div class="form-group">
 		    <label for="email">Tên đăng nhập</label>
-		    <input type="text" class="form-control" style="width: 420px !important;" placeholder="Nhập tên đăng nhập" name="username" id="email" required>
+		    <input type="text" class="form-control" style="width: 420px !important;" placeholder="Nhập tên đăng nhập" name="username"  required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Email</label>
-		    <input type="email" class="form-control" name="email" style="width: 420px !important;" placeholder="Nhập email" id="pwd" required>
+		    <input type="email" class="form-control" name="email" style="width: 420px !important;" placeholder="Nhập email"  required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Mật khẩu</label>
-		    <input type="password" class="form-control" name="pass" style="width: 420px !important;" placeholder="Nhập mật khẩu" id="pwd" required>
+		    <input type="password" class="form-control" name="pass" style="width: 420px !important;" placeholder="Nhập mật khẩu" required>
 		  </div>
 		  <button type="submit" class="btn btn-primary">Đăng ký</button>
 		</form>

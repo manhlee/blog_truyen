@@ -18,7 +18,11 @@ function convert_vi_to_en($str) {
       $str = str_replace(" ", "-", str_replace("&*#39;","",$str));
       return $str;
   }
-  
+  function convert_str_to_key($str)
+  {
+    $str = str_replace(" ", "+", str_replace("&*#39;","",$str));
+      return $str;
+  }
   function random_string($length) { 
     $key = ''; 
     $keys = array_merge(range(0, 9), range('a', 'z')); 

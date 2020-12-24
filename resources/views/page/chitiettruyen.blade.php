@@ -22,14 +22,23 @@
   					<h1 class="text-center">Truyện: {{$truyen_chitiet->tentruyen}}</h1>
   					<p class="lead text-center">Tác giả: {{$truyen_chitiet->tacgia->ten}}</p>
   					<div class="nut text-center">
-  						<a href="#chuong" class="btn btn-primary"><i class="fas fa-bars"></i>
+              @if(count($truyen_chitiet->chuong)>1)
+  						<a href="#" class="btn btn-primary" id="list_chuong"><i class="fas fa-bars"></i>
   						Danh sách chương</a>
+              @else
+              <a href="doctruyen/{{$truyen_chitiet->chuong->first()->id}}/{{$truyen_chitiet->tenkhongdau}}/{{$truyen_chitiet->chuong->first()->tenkhongdau}}.html" class="btn btn-primary">Danh sách chương</a>
+              @endif
   						<a href="" class="btn btn-danger"><i class="far fa-thumbs-up"></i>
   						Truyện yêu thích</a>
   					</div>
   					<hr>
   					<div class="nut text-center">
-  						<a href="" class="btn btn-primary">Đọc Truyện</a>
+              @if(count($truyen_chitiet->chuong)>1)
+                <a href="doctruyen/{{$truyen_chitiet->chuong->first()->id}}/{{$truyen_chitiet->tenkhongdau}}/{{$truyen_chitiet->chuong->first()->tenkhongdau}}.html" class="btn btn-primary">Đọc Truyện</a>
+              @else
+             
+  						  <a href="doctruyen/{{$truyen_chitiet->chuong->first()->id}}/{{$truyen_chitiet->tenkhongdau}}/{{$truyen_chitiet->chuong->first()->tenkhongdau}}.html" class="btn btn-primary">Đọc Truyện</a>
+              @endif
   					</div>
   					<hr>
   					<div class="truyen-phai_info">
@@ -45,15 +54,16 @@
   			@if(count($truyen_chitiet->chuong)>1)
   		  <div class="danhsachchuong">
   		  	  <div class="danhsachchuong-tieude text-left">
-  		  	  	<h3 id="chuong"><i class="fas fa-bars"></i>
+  		  	  	<h3 id="C4"><i class="fas fa-bars"></i>
   		  	  	Danh sách chương truyện <u>{{$truyen_chitiet->tentruyen}}</u></h3>
   		  	  </div>
   		  	  <hr>
   		  	  <div class="danhsachchuong-noidung">
   		  	  	@foreach($truyen_chitiet->chuong as $chuong)
-  		  	  	<p class="danhsachchuong-noidung_item"><a href="">{{$chuong->ten}}</a></p>
+  		  	  	<p class="danhsachchuong-noidung_item"><i class="fas fa-torah"></i><a href="doctruyen/{{$chuong->id}}/{{$chuong->truyen->tenkhongdau}}/{{$chuong->tenkhongdau}}.html"> {{$chuong->ten}}</a></p>
   		  	  	  @endforeach
   		  	  </div>
+            
   		  	
   		  </div><!-- end danh sách chương -->
   		  @endif
@@ -99,10 +109,21 @@
   		  		</form>
   		  		@else
   		  			<h3>Đăng nhập để bình luận!</h3>
-  		  			<a type="button" href="dangnhap" class="btn btn-success">Đăng nhập</a>
-  		  			<a type="button" href="dangky" class="btn btn-primary">Đăng ký</a>
+  		  			<a data-toggle="modal" data-target="#myModal" class="btn btn-success">Đăng nhập</a>
+  		  			<a class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Đăng ký</a>
   		  		@endif
   		  	</div>
   		  </div>
   		</div>
+      @include('page.layout.nav')
+@endsection
+@section('script')
+  <script>
+    $(document).ready(function(){
+      $('#list_chuong').click(function(){
+        $('html,body').animate({scrollTop:$('.danhsachchuong').offset().top},500);
+        return false;
+      });
+    });
+  </script>
 @endsection

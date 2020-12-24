@@ -18,6 +18,7 @@
 						<div class="thanh2"></div>
 						<div class="tieude">Tác phẩm: {{$tt->tentruyen}}</div>
 						<div class="tacgia">Tác giả: {{$tt->tacgia->ten}}</div>
+						<div class="tacgia luotxem"><i class="fas fa-eye"></i> {{$tt->luotxem}} lượt xem</div>
 					</div>
 				</div>
 				@endforeach
@@ -40,4 +41,5 @@
 				@endforeach
 			</div>
 		</div>
+		@include('page.layout.nav')
 @endsection
